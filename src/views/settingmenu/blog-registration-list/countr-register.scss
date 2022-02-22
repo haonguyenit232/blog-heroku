@@ -1,0 +1,160 @@
+.card {
+    border-radius: 1rem;
+    border: none;
+}
+
+input[type="text"],
+select {
+    background-color: #F5F6FA;
+}
+
+.custom-select {
+    background: #F5F6FA url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(78, 87, 170)'><polygon points='0,0 100,0 50,50'/></svg>") no-repeat right 0.75rem center/8px 10px;
+    background-size: 0.6rem 1.2rem;
+    background-position-y: 0.7rem;
+}
+
+.btn-active-setting {
+    margin-right: 5px;
+    background: #c3d6e7;
+    border-radius: 10px !important;
+}
+.boder-coler{
+    border: 1px solid #d8dbe0 !important;
+}
+// ______________________ table start ______________________
+
+.table td.code {
+    width: 300px;
+}
+.table #delete-btn {
+    padding-left: 0;
+    border: none !important;
+}
+.user-list-table tbody tr td.code {
+    border-right: 2px solid #FFFFFF !important;
+}
+
+// ______________________ table end ______________________
+
+// ______________________ media screen adjust start ______________________
+
+@media(max-width: 575.98px) {
+    .table {
+        min-width: 600px;
+    }
+}
+
+@media(max-width: 767.98px) {
+    .search-btn {
+        text-align: center;
+    }
+    .form-group {
+        margin-bottom: 0.3rem;
+    }
+    .form-control {
+        margin-bottom: 0.3rem;
+    }
+}
+
+.add-css-update{
+    color: #4e57aa;
+    font-size: 20px;
+    margin: 20px;
+    margin-left: 5px;
+    margin-bottom: 0;
+}
+.icon-add {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+
+.line {
+    width: 1px !important;
+    background-color: #e3e5f1 !important;
+    height: 72% !important;
+    margin-left: 55% !important;
+    margin-top: 15px !important;
+}
+
+button:focus {
+    box-shadow: none!important;
+  }
+  
+  .user-list-table .edit-btn {
+    background-color: #B1AAF6;
+    color: #FFFFFF;
+    height: 29px;
+  }
+  
+  .user-list-table .edit-btn:hover {
+    background-color: #9593E2;
+    color: #FFFFFF;
+  }
+
+  .require {
+    color: #F62B14;
+  }
+  .imgPreview {
+    margin: 11px -550px;
+    height: 70px;
+    width: 70px;
+    border-left: 1px solid #C4CCE3;
+    border-right: 1px solid #C4CCE3;
+    border-top: 5px solid #C4CCE3;
+    border-bottom: 5px solid #C4CCE3;
+  }
+  .imgPreview img {
+      width: 100%;
+      height: 100%;
+  }  
+
+  .confirm-body {
+    padding-bottom: 0.6rem;
+  }
+  $fontSize: 19px;
+  $lineWidth: 2px;
+  $lineColor: #CCC;
+  $backgroundColor: #FFF;
+  $xPadding: 0px;
+  .textbox-lines {
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    background-attachment: local;
+    background-image:
+      linear-gradient(to right, $backgroundColor, $backgroundColor $xPadding, transparent $xPadding),
+      linear-gradient(to left, $backgroundColor, $backgroundColor $xPadding, transparent $xPadding),
+      repeating-linear-gradient(
+        #FFF,
+        #FFF 36px,
+        #CCC 36px,
+        currentcolor 37px
+      );
+    line-height: 38px;
+    resize: none;
+  }
+  
+  .user-list-table .edit-btn:focus {
+    background-color: #9593E2;
+  }
+  
+  .user-list-table .delete-btn {
+    background-color: #F62B14;
+    color: #FFFFFF;
+    height: 29px;
+  }
+  
+  .user-list-table .delete-btn:hover {
+    background-color: #E20500;
+    color: #FFFFFF;
+  }
+  
+  .user-list-table .delete-btn:focus {
+    background-color: #E20500;
+  }
+
+// ______________________ media screen adjust end ______________________

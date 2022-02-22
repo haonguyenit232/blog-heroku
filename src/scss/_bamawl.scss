@@ -1,0 +1,403 @@
+/** for required fields */
+.required{
+    color: red;
+    font-weight: bold;
+}
+
+/** for success and error message */
+.success{
+    color: white;
+    background-color: #2eb85c;
+    border:1px solid e55353;
+    border-radius: 10px;
+}
+.error{
+    color: white;
+    background-color: #e55353;
+    border:1px solid e55353;
+    border-radius: 10px;
+}
+
+/** dropdown style */
+.select{
+    text-align: left;
+    width: 100%;
+    border-bottom: 2px solid #E3E5F1;
+    border-top: initial;
+    border-left: initial;
+    border-right: initial;
+}
+.select:before{
+    content: "\25bc";
+    float:right;
+    color:gray;
+    font-size: 10px;
+    margin: 5px 0px 0px 0px;
+}
+.select:after{
+    content: "";
+    margin:0 0.5em;
+    display:inline-block;
+    border: 0px solid transparent;
+}
+.select:hover:before{
+    color: var(--select-hover)  ;
+}
+.emp-dropdown{
+    width: 80%;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+/** Button Design */
+.form-btn {
+    background-image: linear-gradient(to bottom, #C7CBF7, #FFFFFF);
+    color: #000000;
+    border-color: #E7E5E5;
+    border-radius: 6px;
+    // padding: 8px 25px 8px 25px;
+    min-width: 6rem;
+    height: 2.5rem;
+}
+.form-btn:hover {
+    color: #000000;
+    background-image: linear-gradient(to bottom, #A1A8F7, #FFFFFF);
+}   
+.form-btn:focus {
+    color: #000000;
+    background-image: linear-gradient(to bottom, #A1A8F7, #FFFFFF);
+}
+/** start table design */
+.row-count-msg {
+    color: #7BBE35;
+    }
+.table-responsive {
+    border-radius: 1rem !important;
+}
+.table {
+    margin-bottom: 1rem;
+    // word-break: break-all;
+    border-collapse: inherit;
+    // border: 1px solid #F1F3F8;
+    border: 1px solid #D4D0D0;
+    border-spacing: 0px;
+    //border-radius: 1rem;
+} 
+.table thead th {
+    vertical-align: top;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #FFFFFF;
+    text-align: left;
+    // word-break: break-word;
+    background-color: #B1AAF6;
+    color: #FFFFFF;
+}
+.table tbody tr:nth-of-type(odd) {
+    background-color: #FFFFFF; 
+}   
+.table tbody tr:nth-of-type(even) {
+    background-color: #F1F3F8;
+}  
+.table tbody tr td {
+    text-align: center;
+    vertical-align: middle;
+    border-right: 2px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+    border-top: none; 
+}
+.td-no{
+    border-left: 2px solid #B1AAF6;
+}
+.icon-clt{
+    width: 20px;
+    height: 20px;   
+}
+.table-panel {
+    border-radius: 1rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.td-green{
+    background-color: #D6F8B3;
+}
+.td-pink{
+    background-color: #FADEE6;     
+}
+.td-orange{
+    background-color: #FEF3D4;   
+}
+.td-blue{
+    background-color: #D4F3FE; 
+}
+.td-name{
+    background-color: #D6F8B3; 
+}
+.titleicon{
+    width: 5px;
+    height: 12px;
+    margin-right: 5px;
+}
+/** end table design */
+
+/** start toggle design */
+.c-switch-sm .c-switch-input:checked ~ .c-switch-slider::before {
+    transform: translateX(30px) !important;
+}
+.c-switch-sm {
+    width: 50px !important;
+}
+/** end toggle design */
+
+/** add allowance icon */
+.add-icon{
+    margin-left: 30px;
+    width: 30px;
+    height: 30px;
+}
+.title-icon{
+    width: 5px;
+    height: 12px;
+    margin-right: 10px;;
+
+}
+.payment-icon{
+    margin: 5px 5px 8px 0px;
+    width: 17px;
+    height: 15px;
+}
+.year-icon{
+    margin: 5px 5px 8px 5px;
+    // position: absolute;
+    width: 15px;
+    height: 15px;
+}
+.exp-input{
+    height: 25px;
+    border: none;
+}
+.date-icon{
+    position: absolute;
+    margin: 7px 5px 0px 0px;
+    width: 17px;
+    height: 17px;
+}
+/** Start Date Picker CSS */
+.MuiSvgIcon-root {
+    color:#575FAE;
+}
+.MuiInputBase-input{    
+    text-align: center !important;
+    font-family: 'Titillium Web', sans-serif !important;
+    font-size: 0.875rem !important;
+}
+.MuiPickersToolbar-toolbar {
+    height: 0px !important;
+}
+.MuiTypography-h4 {
+    font-size: unset !important;
+}
+.MuiButtonBase-root:focus {
+	outline: none !important;
+}
+.MuiPickersDay-daySelected .MuiTypography-colorInherit {
+	color: white !important;
+}
+/** End Date Picker CSS */
+
+/** Card border CSS */
+.card {
+    border-radius: 1rem !important;
+}
+.card-header {
+   border-top-left-radius: 1rem !important;
+   border-top-right-radius: 1rem !important;
+}
+/** End Card CSS */
+
+/** Toggle Switch Style Start */
+.toggle-switch {
+    position: relative;
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    &-checkbox {
+        display: none;
+    }
+    &-label {
+        display: block;
+        overflow: hidden;
+        border-radius: 10px;
+        margin: 0;
+    }
+    &-inner-1 {
+        display: block;
+        width: 200%;
+        margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+        &:before,
+        &:after {
+            display: block;
+            float: left;
+            width: 50%;
+            height: 20px;
+        }
+        &:before {
+            content: "";
+            text-transform: uppercase;
+            padding-left: 10px;
+            background: linear-gradient(315deg, #f0ecfc 0%, #4851AC 74%);
+        }
+    }
+    &-inner-2 {
+        display: block;
+        width: 200%;
+        margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+        &:before,
+        &:after {
+            display: block;
+            float: left;
+            width: 50%;
+            height: 20px;
+        }
+        &:before {
+            content: "";
+            text-transform: uppercase;
+            padding-left: 10px;
+            background: linear-gradient(315deg, #D8E5CA 0%, #7BBE35 74%);
+        }
+    }
+    &-inner-3 {
+        display: block;
+        width: 200%;
+        margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+        &:before,
+        &:after {
+            display: block;
+            float: left;
+            width: 50%;
+            height: 20px;
+        }
+        &:before {
+            content: "";
+            text-transform: uppercase;
+            padding-left: 10px;
+            background: linear-gradient(315deg, #FBEECA 0%, #FFD255 74%);
+        }
+    }
+    &-disabled {
+        cursor: not-allowed;
+        &:before {
+            cursor: not-allowed;
+        }
+    }
+    &-inner-1:after {
+        content: "";
+        text-transform: uppercase;
+        padding-right: 10px;
+        background: linear-gradient(315deg, #f0ecfc 0%, #4851AC 74%);
+        text-align: right;
+    }
+    &-inner-2:after {
+        content: "";
+        text-transform: uppercase;
+        padding-right: 10px;
+        background: linear-gradient(315deg, #D8E5CA 0%, #7BBE35 74%);
+        text-align: right;
+    }
+    &-inner-3:after {
+        content: "";
+        text-transform: uppercase;
+        padding-right: 10px;
+        background: linear-gradient(315deg, #FBEECA 0%, #FFD255 74%);
+        text-align: right;
+    }
+    &-switch {
+        display: block;
+        width: 15px;
+        margin: 3px;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        // right: 40px;
+        border: 0 solid #bbb;
+        border-radius: 10px;
+        transition: all 0.3s ease-in 0s;
+    }
+    &-checkbox:checked + &-label {
+        .toggle-switch-inner {
+            &-1{
+                margin-left: 0;
+            }
+            &-2{
+                margin-left: 0;
+            }
+            &-3{
+                margin-left: 0;
+            }                 
+        }
+        .toggle-switch-switch {
+            right: 0px;
+        }
+    }
+}
+/** Toggle Switch Style End */
+
+/** Modal Content Style Start */
+.modal-content {
+    border-radius: 15px !important;
+}
+/** Modal Content Style End */
+/** Confirm Btn Style for Employee Overtime Rate List Start */
+.confirm-btn {
+	margin: 1rem;
+	background-image: linear-gradient(to bottom, #C7CBF7, #FFFFFF);
+	color: #000000;
+	border-color: #E7E5E5;
+	border-radius: 6px;
+	padding: 8px 25px 8px 25px;
+	min-width: 5.6rem;
+}
+
+.confirm-btn:hover {
+	color: #000000;
+	background-image: linear-gradient(to bottom, #A1A8F7, #FFFFFF);
+}
+
+.confirm-btn:focus {
+	color: #000000;
+	background-image: linear-gradient(to bottom, #A1A8F7, #FFFFFF);
+}
+/** Confirm Btn Style for Employee Overtime Rate List End */
+/** Cancle Btn Style for Employee Overtime Rate List Start */
+.cancel-btn {
+    color: #4f5d73;
+    background-color: #f9b115;
+    border-color: #f9b115;
+}
+/** Cancle Btn Style for Employee Overtime Rate List End */
+
+.td-emp-name{
+    background-color: #D6F8B3;
+}
+.td-dept{
+    background-color: #FADEE6;
+}
+.td-overtime-title{
+    background-color: #FEF3D4;
+}
+.td-overtime-type{
+    background-color: #D8F5F3;
+}
+
+.MuiAutocomplete-endAdornment{
+    display: none;
+}
+// // from date , to date
+// #date-picker-dialog input:placeholder-shown{
+//     text-align: center !important;
+// }
