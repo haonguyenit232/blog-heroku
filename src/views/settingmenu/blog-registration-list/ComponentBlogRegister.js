@@ -49,8 +49,8 @@ const ComponentBlogRegister = (props) => {
                   </div>
                 </CCol>
               </CRow>
-              <CRow>
-                <CCol xs="12" md="2">
+              <CRow style={{ textAlign: "center" }}>
+                <CCol xs="12">
                   <CFormGroup>
                     <CButton className="form-btn m-save-btn" onClick={() => props.search()} >
                       {props.t("Search")}
