@@ -48,13 +48,13 @@ const BlogModalAdd = (props) => {
                                 <CRow>
                                     <CCol className="" lg="6">
                                         <CFormGroup>
-                                            <CLabel Image htmlFor="contr-code">{props.t('Title')}<span className="require">*</span></CLabel>
+                                            <CLabel Image htmlFor="contr-code" className="font-weigth">{props.t('Title')}<span className="require">*</span></CLabel>
                                             <CInput id="contr-code" name="title"
                                                 onChange={props.dataChange} value={props.countrData.title} />
                                         </CFormGroup>
                                     </CCol>
                                     <CCol lg="6" className="mb-4" >
-                                        <CLabel htmlFor="emp-id-content" className="">{props.t("Content")}<span className="require">*</span></CLabel>
+                                        <CLabel htmlFor="emp-id-content" className="font-weigth">{props.t("Content")}<span className="require">*</span></CLabel>
                                         <div className="input-emp-list">
                                             <CTextarea name="content" className="textbox-lines" maxLength="300" onChange={props.dataChange} rows="2" style={{ color: "currentColor" }} value={props.countrData.content}></CTextarea>
                                         </div>
@@ -62,7 +62,7 @@ const BlogModalAdd = (props) => {
                                 </CRow>
                                 <CFormGroup row>
                                     <CCol md="2">
-                                        <CLabel htmlFor="photo">{props.t("Upload Photo")}</CLabel>
+                                        <CLabel htmlFor="photo" className="font-weigth">{props.t("Upload Photo")}</CLabel>
                                     </CCol>
                                     <CCol xs="12" md="4" style={{ marginLeft: "-15px" }}>
                                         <input
@@ -81,12 +81,12 @@ const BlogModalAdd = (props) => {
                                                 : props.t("Click to upload")}
                                         </label>
                                     </CCol>
-                                    <CCol xs="12" md="4">
+                                    <CCol xs="12" md="2">
                                         <CButton className="form-btn m-save-btn" onClick={props.clearPhoto}>
                                             {props.t("Remove Image")}
                                         </CButton>
-
-                                        <div className="require">{props.imgError}</div>
+                                    </CCol>
+                                    <CCol xs="12" md="2">
                                         {props.imagePreviewUrl && (
                                             <div className="imgPreview position-absolute">
                                                 <img width="60%" src={props.imagePreviewUrl} alt={props.selectFile} />

@@ -36,14 +36,14 @@ const ComponentBlogRegister = (props) => {
               <CRow>
                 <CCol xs="12" md="6">
                   <CFormGroup>
-                    <h5 htmlFor="emp-id-title" className="">{props.t("Title")}</h5>
+                    <CLabel htmlFor="emp-id-title" className="font-weigth">{props.t("Title")}</CLabel>
                     <CInput id="emp-id-title" name="title" value={props.titleSearch}
                       onChange={props.searchChange}
                     />
                   </CFormGroup>
                 </CCol>
                 <CCol lg="6" className="mb-4" >
-                  <h5 htmlFor="emp-id-content" className="">{props.t("Content")}</h5>
+                  <CLabel htmlFor="emp-id-content" className="font-weigth">{props.t("Content")}</CLabel>
                   <div className="input-emp-list">
                     <CTextarea name="content" className="textbox-lines" maxLength="100" onChange={props.searchChange} rows="2" style={{ color: "currentColor" }} value={props.contentSearch ? props.contentSearch : ""}></CTextarea>
                   </div>

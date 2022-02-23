@@ -30,14 +30,12 @@ function LegacyWelcomeClass({ t }) {
   const [show, setShow] = useState(false);
   const [itemModal, setItemModal] = useState(false);
   const [errorModal, setErrorModal] = useState([]);
-  const [img, setImg] = useState();
   const [page, setPage] = useState();
   const [pages, setPages] = useState();
   const [titleSearch, setTitleSearch] = useState("")
   const [contentSearch, setContentSearch] = useState("")
   const [selectFile, setSelectFile] = useState();
   const [clearPhotoFlag, setClearPhotoFlag] = useState(false);
-  const [imgError, setImgError] = useState("");
   const [imagePreviewUrl, setImagePreviewUrl] = useState();
 
   /**
@@ -336,7 +334,6 @@ function LegacyWelcomeClass({ t }) {
       title: "", content: ""
     })
     setErrorModal([]);
-    setImgError("");
     setSelectedFile("");
     setImagePreviewUrl("");
     setSelectFile("");
@@ -361,7 +358,6 @@ function LegacyWelcomeClass({ t }) {
   }
 
   const clearPhoto = (e) => {
-    setImgError("");
     setSelectedFile("");
     setImagePreviewUrl("");
     setSelectFile("");
@@ -408,8 +404,8 @@ function LegacyWelcomeClass({ t }) {
       <BlogModalAdd
         t={t} countrData={countrData} dataChange={dataChange}
         itemModal={itemModal} closeItemModal={closeItemModal} clearPhotoFlag={clearPhotoFlag}
-        img={img} errorModal={errorModal} selectFile={selectFile} clearPhoto={clearPhoto}
-        onImageChange={onImageChange} selectedFile={selectedFile} imgError={imgError}
+        errorModal={errorModal} selectFile={selectFile} clearPhoto={clearPhoto}
+        onImageChange={onImageChange} selectedFile={selectedFile}
         Save={Save} btnSaveEdit={btnSaveEdit} imagePreviewUrl={imagePreviewUrl}
       />
     </>

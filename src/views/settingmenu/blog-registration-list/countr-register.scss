@@ -98,10 +98,14 @@ button:focus {
   .require {
     color: #F62B14;
   }
+
+  .font-weigth{
+    font-weight: bold !important;
+  }
   .imgPreview {
-    margin: 11px -550px;
-    height: 70px;
-    width: 70px;
+    //margin: 11px -550px;
+    height: 90px;
+    width: 90px;
     border-left: 1px solid #C4CCE3;
     border-right: 1px solid #C4CCE3;
     border-top: 5px solid #C4CCE3;
