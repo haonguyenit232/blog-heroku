@@ -2,8 +2,9 @@
   "name": "@coreui/coreui-free-react-admin-template",
   "version": "3.0.0",
   "description": "CoreUI React Open Source Bootstrap 4 Admin Template",
-  "engines":{
-	  "node": "16.x"
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
   },
   "author": {
     "name": "CoreUI",
@@ -67,7 +68,7 @@
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build", 
+    "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "test:cov": "npm test -- --coverage --watchAll=false",
     "test:debug": "react-scripts --inspect-brk test --runInBand",
@@ -92,9 +93,5 @@
       "!src/serviceWorker.js",
       "!src/polyfill.js"
     ]
-  },
-  "engines": {
-    "node": ">=10",
-    "npm": ">=6"
   }
 }
