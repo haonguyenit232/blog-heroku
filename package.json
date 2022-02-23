@@ -46,6 +46,7 @@
     "i18next-http-backend": "^1.1.0",
     "jquery": "^3.5.1",
     "moment": "^2.29.1",
+    "node-sass": "4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
@@ -58,7 +59,8 @@
     "redux": "4.0.5"
   },
   "devDependencies": {
-    "react-scripts": "^5.0.0"
+    "react-scripts": "^3.4.1",
+    "sass-loader": "^12.3.0"
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
