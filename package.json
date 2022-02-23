@@ -61,7 +61,7 @@
     "react-scripts": "^3.4.1"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start"
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:cov": "npm test -- --coverage --watchAll=false",
