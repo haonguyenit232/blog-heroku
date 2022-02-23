@@ -58,8 +58,7 @@
     "redux": "4.0.5"
   },
   "devDependencies": {
-    "react-scripts": "^5.0.0",
-    "sass-loader": "^12.3.0"
+    "react-scripts": "^5.0.0"
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
