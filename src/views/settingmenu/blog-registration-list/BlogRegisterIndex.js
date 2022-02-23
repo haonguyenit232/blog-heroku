@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useEffect, useState, useCallback, useReducer } from 'react'
 import './countr-register.scss'
 import ComponentBlogRegister from './ComponentBlogRegister'
 import api from '../../../API/API';
@@ -37,7 +37,7 @@ function LegacyWelcomeClass({ t }) {
   const [selectFile, setSelectFile] = useState();
   const [clearPhotoFlag, setClearPhotoFlag] = useState(false);
   const [imagePreviewUrl, setImagePreviewUrl] = useState();
-
+  const [flag, setFlag] = useState(true);
   /**
   * page load
   *
@@ -72,14 +72,51 @@ function LegacyWelcomeClass({ t }) {
   * @param
   * @return
   */
+  const initState = {
+    loading: false,
+    data: [],
+    error: null,
+  }
+
+  const blogReducer = (state, action) => {
+    switch (action.type) {
+      case 'GET_BLOG_REQUEST':
+        return {
+          ...state,
+          loading: true,
+        }
+      case 'GET_BLOG_SUCCESS':
+        return {
+          ...state,
+          loading: false,
+          data: action.data,
+        }
+      case 'GET_BLOG_ERROR':
+        return {
+          ...state,
+          loading: false,
+          data: [],
+          error: action.data,
+        }
+      default:
+        break;
+    }
+  }
+
+  const [blog, blogDispatch] = useReducer(blogReducer, initState);
   const [countrTable, setCountrTable] = useState([]);
   const getDataAPI = useCallback(() => {
-    api.get('api/v1/blogs')
-      .then((response) => {
-        let status = response.data?.status;
-        if (status == 'NG') {
-          setCountrTable([]);
-        } else {
+    blogDispatch({
+      type: 'GET_BLOG_REQUEST'
+    });
+
+    setTimeout(() => {
+      api.get('api/v1/blogs')
+        .then((response) => {
+          blogDispatch({
+            type: 'GET_BLOG_SUCCESS',
+            data: response
+          });
           let data = response.data?.data;
           let page = response.data?.pagy
           setTotal(page.count)
@@ -88,12 +125,16 @@ function LegacyWelcomeClass({ t }) {
           setPage(page.page)
           setPages(page.pages)
           data && setCountrTable(data);
-        }
-      })
-      .catch(function (error) {
-        setError(error)
-        setSuccess('')
-      })
+        })
+        .catch(function (error) {
+          blogDispatch({
+            type: 'GET_BLOG_ERROR',
+            data: error
+          });
+          setError(error)
+          setSuccess('')
+        })
+    }, 2000);
   }, []);
 
   // data change in form save/update
@@ -162,6 +203,7 @@ function LegacyWelcomeClass({ t }) {
   * @return
   */
   const saveOK = async () => {
+    setFlag(false)
     setShow(!show); setType(''); setContent('');
     let url = '', method = '', msg = '';
     const formData = new FormData();
@@ -210,6 +252,7 @@ function LegacyWelcomeClass({ t }) {
   const editCountry = async (id) => {
     setItemModal(!itemModal);
     setSuccess([]); setErrorModal([])
+    setFlag(false)
     setEditID(id)
     api.get('api/v1/blogs/' + id)
       .then(function (response) {
@@ -237,6 +280,7 @@ function LegacyWelcomeClass({ t }) {
   * @return
   */
   const commonSearch = async (page = 1, items = 20) => {
+    setFlag(false)
     let teampSearch;
     if (!isEmpty(titleSearch) && !isEmpty(contentSearch)) {
       teampSearch = `&search=${titleSearch}` + `&search=${contentSearch}`
@@ -287,6 +331,7 @@ function LegacyWelcomeClass({ t }) {
  * @return
  */
   const deleteOK = async () => {
+    setFlag(false)
     if (deleteId !== "") {
       setShow(!show); setContent(''); setType('');
       api.delete('api/v1/blogs/' + deleteId)
@@ -304,6 +349,7 @@ function LegacyWelcomeClass({ t }) {
   }
 
   const changePage = (newPage) => {
+    setFlag(false)
     setPage(newPage);
     commonSearch(newPage, defaultPerPage);
   }
@@ -313,6 +359,7 @@ function LegacyWelcomeClass({ t }) {
   }
 
   const closeItemModal = (e) => {
+    setFlag(false)
     setItemModal(!itemModal);
     setCountrData({
       title: "", content: ""
@@ -366,6 +413,12 @@ function LegacyWelcomeClass({ t }) {
         success != "" &&
         <CCard className="custom-card success p-3 mt-4 mb-3">
           <div className="msg">{success}</div>
+        </CCard>
+
+      }
+      {flag &&
+        <CCard className="custom-card success p-3 mt-4 mb-3">
+          {blog.loading ? <p>{t('Loading....')}</p> : <p>{t('Loading Success')}</p>}
         </CCard>
       }
       <Confirmation
