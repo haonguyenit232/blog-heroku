@@ -308,7 +308,7 @@ function LegacyWelcomeClass({ t }) {
       api.delete('api/v1/blogs/' + deleteId)
         .then((response) => {
           setError('');
-          commonSearch(1, defaultPerPage);
+          commonSearch(page, defaultPerPage);
           let successMsg = t(message.JSE003);
           setSuccess(successMsg);
         })
