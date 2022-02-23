@@ -163,56 +163,40 @@ function LegacyWelcomeClass({ t }) {
   */
   const saveOK = async () => {
     setShow(!show); setType(''); setContent('');
-    if (editID === "") {
-      const formData = new FormData();
-      formData.append("blog[title]", countrData.title);
-      formData.append("blog[content]", countrData.content);
-      formData.append("blog[image]", selectedFile);
-      axios({
-        method: "post",
-        url: 'https://api-placeholder.herokuapp.com/api/v1/blogs',
-        data: formData,
-        headers: { "Content-Type": "multipart/form-data" },
-      })
-        .then(function (response) {
-          let successMsg = t(message.JSE005);
-          setSuccess(successMsg);
-          setBtnSaveEdit("Save")
-          commonSearch(1, defaultPerPage);
-          setCountrData({
-            title: "", content: ""
-          })
-          clearPhoto();
-        })
-        .catch(function (error) {
-          setSuccess('');
-          setError(error)
-        });
-    } else {
-      const formData = new FormData();
-      formData.append("blog[title]", countrData.title);
-      formData.append("blog[content]", countrData.content);
-      formData.append("blog[image]", selectedFile);
-      axios({
-        method: "put",
-        url: 'https://api-placeholder.herokuapp.com/api/v1/blogs/' + editID,
-        data: formData,
-        headers: { "Content-Type": "multipart/form-data" },
-      })
-        .then(function (response) {
-          let successMsg = t(message.JSE006);
-          setSuccess(successMsg);
-          setBtnSaveEdit("Save")
-          commonSearch(1, defaultPerPage);
-          setCountrData({
-            title: "", content: ""
-          })
-        })
-        .catch(function (error) {
-          setSuccess('');
-          setError(error)
-        });
+    let url = '', method = '', msg = '';
+    const formData = new FormData();
+    formData.append("blog[title]", countrData.title);
+    formData.append("blog[content]", countrData.content);
+    formData.append("blog[image]", selectedFile);
+    if (editID === "") {  // save
+      url = 'https://api-placeholder.herokuapp.com/api/v1/blogs';
+      method = 'post';
+      msg = t(message.JSE005);
+    } else { // update
+      url = 'https://api-placeholder.herokuapp.com/api/v1/blogs/' + editID;
+      method = 'put';
+      msg = t(message.JSE006);
     }
+    axios({
+      method: method,
+      url: url,
+      data: formData,
+      headers: { "Content-Type": "multipart/form-data" },
+    })
+      .then(function (response) {
+        let successMsg = msg;
+        setSuccess(successMsg);
+        setBtnSaveEdit("Save")
+        commonSearch(1, defaultPerPage);
+        setCountrData({
+          title: "", content: ""
+        })
+        clearPhoto();
+      })
+      .catch(function (error) {
+        setSuccess('');
+        setError(error)
+      });
   }
 
   /**
