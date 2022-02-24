@@ -259,6 +259,7 @@ function LegacyWelcomeClass({ t }) {
         let edit = response.data
         setImagePreviewUrl(edit.image.url);
         setSelectFile(edit.image.url);
+        setSelectedFile(edit.image);
         setCountrData({
           title: edit.title,
           content: edit.content
@@ -301,6 +302,7 @@ function LegacyWelcomeClass({ t }) {
       .then(function (response) {
         let data = response.data?.data;
         let page = response.data?.pagy
+        if(data.length == 0) setError(['Data is not found!'])
         setPage(page.page)
         setPages(page.pages)
         setTotal(page.count)
@@ -337,7 +339,7 @@ function LegacyWelcomeClass({ t }) {
       api.delete('api/v1/blogs/' + deleteId)
         .then((response) => {
           setError('');
-          commonSearch(page, defaultPerPage);
+          commonSearch(1, defaultPerPage);
           let successMsg = t(message.JSE003);
           setSuccess(successMsg);
         })
